@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Empresas e Setores</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <aside class="menu">
+        <button id="btnEmpresas">Empresas</button>
+        <button id="btnSetores">Setores</button>
+      </aside>
+
+      <main class="conteudo">
+        <div class="cabecalho">
+          <h1 id="titulo">Empresas</h1>
+          <button id="btnAdicionar" class="btn-add">+</button>
+        </div>
+        <div id="itensporpagina">
+          <select
+            id="selectItensPorPagina"
+            class="select-itens"
+            onchange="quantidadeItensMudou(this)"
+          >
+            <option value="5">5 itens por página</option>
+            <option value="10" selected>10 itens por página</option>
+            <option value="20">20 itens por página</option>
+            <option value="50">50 itens por página</option>
+          </select>
+        </div>
+        <div id="listaContainer" class="lista"></div>
+        <div id="paginacao" class="paginacao"></div>
+      </main>
+    </div>
+
+    <div id="modalEmpresa" class="modal">
+      <div class="modal-conteudo">
+        <h2 id="modalEmpresaTitulo">Adicionar Empresa</h2>
+        <form id="formEmpresa">
+          <input
+            type="text"
+            id="razaoSocial"
+            placeholder="Razão Social"
+            required
+            maxlength="150"
+            oninvalid="this.setCustomValidity('Razão social é obrigatório.')"
+            oninput="this.setCustomValidity('')"
+          />
+          <input
+            type="text"
+            id="nomeFantasia"
+            placeholder="Nome Fantasia"
+            required
+            maxlength="60"
+            oninvalid="this.setCustomValidity('Nome fantasia é obrigatório.')"
+            oninput="this.setCustomValidity('')"
+          />
+          <input
+            type="text"
+            id="cnpj"
+            placeholder="CNPJ"
+            required
+            type="text"
+            pattern="\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}"
+            oninvalid="this.setCustomValidity('CNPJ é obrigatório.')"
+            placeholder="00.000.000/0000-00"
+            maxlength="18"
+            oninput="this.setCustomValidity('')"
+          />
+
+          <label for="selectSetores">Setores:</label>
+          <select id="selectSetores"></select>
+          <button type="button" id="btnAdicionarSetor" class="btn-adicionar">
+            Adicionar Setor
+          </button>
+
+          <div id="tagsSetores" class="tags"></div>
+
+          <div class="modal-botoes">
+            <button type="submit" class="btn-confirmar">Gravar</button>
+            <button type="button" id="btnCancelarEmpresa" class="btn-cancelar">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="modalSetor" class="modal">
+      <div class="modal-conteudo">
+        <h2 id="modalSetorTitulo">Adicionar Setor</h2>
+        <form id="formSetor">
+          <input
+            type="text"
+            id="descricaoSetor"
+            placeholder="Descrição"
+            required
+            maxlength="50"
+          />
+          <div class="modal-botoes">
+            <button type="submit" class="btn-confirmar">Gravar</button>
+            <button type="button" id="btnCancelarSetor" class="btn-cancelar">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="modalConfirmar" class="modal">
+      <div class="modal-conteudo">
+        <h3 id="modalConfirmarTexto">Deseja mesmo excluir?</h3>
+        <div class="modal-botoes">
+          <button id="btnConfirmarExcluir" class="btn-confirmar">Sim</button>
+          <button id="btnCancelarExcluir" class="btn-cancelar">Não</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

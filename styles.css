@@ -1,0 +1,278 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.menu {
+  background: #007bff;
+  padding: 20px;
+  padding-top: 115px;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+}
+
+.menu button {
+  background: #fff;
+  border: none;
+  margin-bottom: 12px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.menu button:hover {
+  background-color: #cce5ff;
+}
+
+.conteudo {
+  flex: 1;
+  padding: 20px 30px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cabecalho h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 26px;
+  color: #333;
+}
+
+.btn-add {
+  font-size: 28px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  line-height: 1;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+  background-color: #218838;
+}
+
+.lista {
+  margin-top: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #dee2e6;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+
+.acao-btn {
+  margin-right: 5px;
+  font-size: 14px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.btn-editar {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-editar:hover {
+  background-color: #e0a800;
+}
+
+.btn-excluir {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-excluir:hover {
+  background-color: #bd2130;
+}
+
+.item-setor {
+  background: #e9ecef;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.modal-conteudo {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-conteudo h2,
+.modal-conteudo h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #333;
+}
+
+.modal-conteudo form input,
+.modal-conteudo form select {
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s;
+  width: -webkit-fill-available; /* Para Chrome */
+  width: -moz-available; /* Para Firefox */
+}
+
+.modal-conteudo form input:focus,
+.modal-conteudo form select:focus {
+  border-color: #007bff;
+}
+
+.modal-botoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn-confirmar,
+.btn-cancelar {
+  padding: 8px 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+  width: 45%;
+}
+
+.btn-confirmar {
+  background: #28a745;
+  color: white;
+  width: 45%;
+}
+
+.btn-confirmar:hover {
+  background: #218838;
+}
+
+.btn-cancelar {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-cancelar:hover {
+  background: #bd2130;
+}
+
+.tags {
+  margin-top: 10px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 13px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.tag .remove-tag {
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  user-select: none;
+}
+.paginacao {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.paginacao button {
+  margin: 2px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.select-itens {
+  margin: 2px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btn-adicionar {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
