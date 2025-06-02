@@ -240,11 +240,13 @@ function fecharModalConfirmar() {
 
 btnEmpresas.onclick = () => {
   secaoAtual = "empresas";
+  titulo.textContent = "Empresas";
   buscarEmpresasESetores();
 };
 
 btnSetores.onclick = () => {
   secaoAtual = "setores";
+  titulo.textContent = "Setores";
   buscarEmpresasESetores();
 };
 
